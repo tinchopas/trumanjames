@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    {% include 'DevsparkVentureJuiceBundle:Default:nav.html.twig' with {'nav': 'companies'} %}
+    <h1>Company creation</h1>
+
+    {{ tinymce_init() }}
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('company') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

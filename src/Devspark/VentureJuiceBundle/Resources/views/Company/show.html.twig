@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    {% include 'DevsparkVentureJuiceBundle:Default:nav.html.twig' with {'nav': 'companies'} %}
+    <h1>Company</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Displayorder</th>
+                <td>{{ entity.displayOrder }}</td>
+            </tr>
+            <tr>
+                <th>Link</th>
+                <td>{{ entity.link }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ entity.text | raw }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Introsent</th>
+                <td>{{ entity.introSent }}</td>
+            </tr>
+            <tr>
+                <th>Active</th>
+                <td>{{ entity.active }}</td>
+            </tr>
+            {% if entity.logo is not null %}
+            <tr>
+                <th>Logo</th>
+                <td><img src="{{ entity.getWebPath | apply_filter('heighten') }}" /></td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('company') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('company_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

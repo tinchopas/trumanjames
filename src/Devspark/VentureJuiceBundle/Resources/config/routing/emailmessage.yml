@@ -1,0 +1,30 @@
+emailmessage:
+    pattern:  /
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:index" }
+
+emailmessage_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:show" }
+
+emailmessage_new:
+    pattern:  /new
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:new" }
+
+emailmessage_create:
+    pattern:  /create
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:create" }
+    requirements: { _method: post }
+
+emailmessage_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:edit" }
+
+emailmessage_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:update" }
+    requirements: { _method: post|put }
+
+emailmessage_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DevsparkVentureJuiceBundle:EmailMessage:delete" }
+    requirements: { _method: post|delete }

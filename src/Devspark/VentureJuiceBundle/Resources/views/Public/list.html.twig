@@ -1,0 +1,36 @@
+      <div class="features content repeatable-component">
+        <br>
+        {% for entity in entities %}
+        <!---->
+        <div class="row repeatable">
+          <div class="two columns personalized center"><input type="checkbox" value="{{ entity.id }}" id="{{ entity.id }}" name="companies_email[]" class="css-checkbox lrg"/><label for="{{ entity.id }}" class="css-label lrg vlad"></label></div>
+          {#<div class="columns center "><input type="checkbox" value="{{ entity.email }}" id="{{ entity.id }}" name="{{ entity.id }}" /><label for="{{ entity.id }}"></label></div>#}
+          <div class="four columns center">
+            <div class="image ib br" data-name="components.image" data-use-url="true">
+              <div class="content content2" style="display: block; visibility: visible; opacity: 1;">
+                <a class="image-link" href="{{ entity.link }}" target="_blank">
+                  <img alt="" src="{{ app.request.getSchemeAndHttpHost() }}/{{entity.getWebPath}}" class="lazy-img" data-original="{{entity.logo}}" title="" style="position: relative;">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="eight columns offset-one">
+            <h3 class="light text-component" data-name="components.subtitle" data-text-type="heading" data-use-font="true">
+              <div class="content content2 company-title">
+                <a href="{{ entity.link }}" target="_blank">{{ entity.title }}</a>
+              </div>
+            </h3>
+            <div class="p text-component" data-name="components.text" data-use-font="true">
+              <div class="content content2" style="font-family: inherit;">
+                <div class="company-text">
+                    {{ entity.text | raw}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+        {% endfor %}
+      </div>
+      <br>
+

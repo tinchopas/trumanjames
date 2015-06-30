@@ -1,0 +1,11 @@
+<ul class="nav nav-pills">
+  <li id="companies"><a href="{{ path('company') }}" onclick="setActive('emails')">Companies</a></li>
+  <li id="emails"><a href="{{ path('emailmessage') }}" onclick="setActive('companies')">Email Messages</a></li>
+</ul>
+
+<script type="text/javascript">
+    document.onload = setActive("{{nav}}");
+    function setActive(id) {
+        document.getElementById(id).setAttribute("class","active");
+    }
+</script>

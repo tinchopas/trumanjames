@@ -1,0 +1,30 @@
+devspark_venture_juice_homepage:
+    path:     /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /admin/company
+        permanent: true
+
+DevsparkVentureJuiceBundle_company:
+    resource: "@DevsparkVentureJuiceBundle/Resources/config/routing/company.yml"
+    prefix:   /admin/company
+
+DevsparkVentureJuiceBundle_emailmessage:
+    resource: "@DevsparkVentureJuiceBundle/Resources/config/routing/emailmessage.yml"
+    prefix:   /admin/emailmessage
+
+login:
+    path:   /admin/login
+    defaults:  { _controller: DevsparkVentureJuiceBundle:Security:login }
+login_check:
+    path:   /admin/login_check
+logout:
+    path:   /admin/logout
+company_list:
+    pattern: /companyList
+    defaults: { _controller: DevsparkVentureJuiceBundle:Public:companyList }
+
+company_send_mail:
+    pattern: /companySendMail
+    defaults: { _controller: DevsparkVentureJuiceBundle:Public:companySendMail }
+    requirements: { _method: post|put|get }

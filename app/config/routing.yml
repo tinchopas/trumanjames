@@ -1,0 +1,6 @@
+devspark_venture_juice:
+    resource: "@DevsparkVentureJuiceBundle/Resources/config/routing.yml"
+    prefix:   /
+_imagine:
+    resource: .
+    type:     imagine

@@ -1,0 +1,22 @@
+Devspark\VentureJuiceBundle\Entity\EmailMessage:
+    type: entity
+    table: null
+    repositoryClass: Devspark\VentureJuiceBundle\Entity\EmailMessageRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        subject:
+            type: string
+            length: 255
+        body:
+            type: text
+    oneToOne:
+        company:
+            targetEntity: Company
+            joinColumn:
+                name: company_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

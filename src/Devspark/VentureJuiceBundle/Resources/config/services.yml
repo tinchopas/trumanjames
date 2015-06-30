@@ -1,0 +1,13 @@
+parameters:
+#    devspark_venture_juice.example.class: Devspark\VentureJuiceBundle\Example
+
+services:
+#    devspark_venture_juice.example:
+#        class: %devspark_venture_juice.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+#
+    validator.unique.unique_entity_relation:
+        class: Devspark\VentureJuiceBundle\Validator\Constraints\UniqueEntityRelationValidator
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+            - { name: validator.constraint_validator, alias: unique_entity_relation }

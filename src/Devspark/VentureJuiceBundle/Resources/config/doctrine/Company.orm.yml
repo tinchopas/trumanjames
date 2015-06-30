@@ -1,0 +1,50 @@
+Devspark\VentureJuiceBundle\Entity\Company:
+    type: entity
+    table: Company
+    repositoryClass: Devspark\VentureJuiceBundle\Entity\CompanyRepository
+    lifecycleCallbacks:
+        prePersist: [ preUpload ]
+        preUpdate: [ preUpload ]
+        postPersist: [ upload ]
+        postUpdate: [ upload ]
+        preRemove: [ storeFilenameForRemove ]
+        postRemove: [ removeUpload ]
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+            nullable: true
+        displayOrder:
+            type: integer
+            nullable: true
+        logo:
+            type: string
+            length: 255
+            nullable: true
+        link:
+            type: string
+            length: 255
+            nullable: true
+        title:
+            type: string
+            length: 255
+            nullable: true
+        text:
+            type: string
+            length: 1024
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        introSent:
+            type: integer
+            nullable: true
+        active:
+            type: boolean
+            nullable: true

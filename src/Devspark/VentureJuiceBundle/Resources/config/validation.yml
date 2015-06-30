@@ -1,0 +1,6 @@
+Devspark\VentureJuiceBundle\Entity\EmailMessage:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: company
+    properties:
+        company:
+            - Devspark\VentureJuiceBundle\Validator\Constraints\UniqueEntityRelation: ~

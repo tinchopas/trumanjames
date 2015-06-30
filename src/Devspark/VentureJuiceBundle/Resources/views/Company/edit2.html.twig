@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div class="container">
+    <h1>Company edit</h1>
+
+    {{ tinymce_init() }}
+
+    <div class="span10">
+        <form action="{{ path('company_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            {{ form_errors(edit_form) }}
+
+            {% include 'DevsparkVentureJuiceBundle:Company:companyFields.html.twig' %}
+
+            <div class="span10">
+                <div class="row-fluid">
+                            <a href="{{ path('company') }}">
+                                Back to the list
+                            </a>
+                </div>
+            </div>
+            <div class="span10">
+                <div class="row-fluid">
+                            <button type="submit" class="btn btn-success"><i class="icon-ok-sign icon-white"></i>Update</button>
+                </div>
+            </div>
+       </form>
+            <div class="span10">
+                <div class="row-fluid">
+                            <form action="{{ path('company_delete', { 'id': entity.id }) }}" method="post" onsubmit="return confirm('Are you sure you want delete this item?');">
+                            <button type="submit" class="btn btn-danger" onclick=""><i class="icon-trash icon-white"></i>Delete</button>
+                            </form>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

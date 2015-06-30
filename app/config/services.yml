@@ -1,0 +1,6 @@
+services:
+    mine.twig_string_loader:
+        class:        "Twig_Loader_String"
+    mine.twig_string:
+        class:        "%twig.class%"
+        arguments:    [@mine.twig_string_loader, %twig.options% ]
